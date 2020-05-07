@@ -1,7 +1,9 @@
+/* Заливка фона клавиатуры */
 #virtualKeyboardChromeExtension {
 	padding: 15px !important;
 	background-color: #111317 !important;
-	background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(black), to(#333)); !important;
+	/* background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(black), to(#333)); !important; */
+	background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#fafafa), to(#f5f5f5)); !important;
 	position: fixed !important;
 	bottom: -450px ;
 	opacity: 0;
@@ -174,7 +176,7 @@
 }
 @media only screen and (max-width:1200px){
 	#virtualKeyboardChromeExtension [_key=Enter].kbdClick span {
-		background-image: url(/icons/enter.png) !important;
+		background-image: url(/icons/enter.png) !important; /* todo change icon or put it in the middle */
 		font-size: 0px !important;
 		color: transparent !important;
 		text-shadow: none !important;
@@ -225,7 +227,7 @@
 }
 .virtualKeyboardChromeExtensionOverlay {
 	font-family: 'Segoe UI', Tahoma, Sans-Serif !important;
-	background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(black), to(#333));
+	background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(rgb(139, 132, 132)), to(rgb(129, 123, 123)));
 	position: fixed;
 	z-index: 10000001;
 	padding: 5px !important;
@@ -282,8 +284,9 @@
 	top: 3px !important;
 	bottom: 3px !important;
 }
+/* Цвет шрифта на клавишах */
 #virtualKeyboardChromeExtension table td span{
-	color: #fff !important;
+	color: #747474 !important;
 	font-family: 'Segoe UI', Tahoma, Sans-Serif !important;
 	font-size: 32px !important;
 	text-align: center !important;
@@ -332,7 +335,7 @@
 
 #virtualKeyboardChromeExtension table td.kdbCase span, #virtualKeyboardChromeExtension table td.kbdHB span, #virtualKeyboardChromeExtension td.kbdHBS span, #virtualKeyboardChromeExtension table td.kbdHBE span, #virtualKeyboardChromeExtension table td.kbdH span 
 , #virtualKeyboardChromeExtension table td.kbdS span, #virtualKeyboardChromeExtension table td.kbdD span , #virtualKeyboardChromeExtension table td.kbdShift span {
-	-webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.4), inset 0px -1px 1px rgba(0,0,0,1);
+	-webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.411), inset 0px -1px 1px rgba(0,0,0,1);
     padding-top:20px !important;
 }
 #virtualKeyboardChromeExtension td.kdbCase {
@@ -344,24 +347,29 @@
 #virtualKeyboardChromeExtension td.kbdHBE {
 	width: 20% !important;
 }
+/* Заливка клавиш Enter, Backspace */
 #virtualKeyboardChromeExtension td.kbdHB span, #virtualKeyboardChromeExtension td.kbdHBS span, #virtualKeyboardChromeExtension td.kbdHBE span {
-	background-color: #525152 !important;
+	background-color: #dadada !important;
 }
 #virtualKeyboardChromeExtension table {
 	width: 100% !important;
 }
+/* Заливка основных клавиш   */
 #virtualKeyboardChromeExtension td.kbdH span {
-	background-color: #525152 !important;
+	background-color: #ffffff !important;
 }
+/* Заливка пробела */
 #virtualKeyboardChromeExtension td.kbdS span {
-	background-color: #212421 !important;
+	background-color: #ffffff !important;
 } 
 #virtualKeyboardChromeExtension td.kbdS {
 	width: 60% !important;
 }
+/* Заливка остальных клавиш (Shift, Ctrl, смена раскладки и т.д.) */
 #virtualKeyboardChromeExtension td.kbdD span, #virtualKeyboardChromeExtension td.kbdShift span {
-	background-color: #212021 !important;
-}		
+	background-color: #dadbda !important;
+}
+/* Активная (зажатая) клавиша Shift */
 #virtualKeyboardChromeExtensionMainKbd.Shift td.kbdShift span {
 	background-color: #DDD !important;
 	color: #333 !important;

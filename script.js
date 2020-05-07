@@ -869,8 +869,18 @@ false);
 							}
 							virtualKeyboardChrome_prevent(ent);
 						};
-						e[i].ontouchmove = virtualKeyboardChrome_prevent;
-						e[i].ontouchend = virtualKeyboardChrome_prevent;
+						// e[i].ontouchmove = virtualKeyboardChrome_prevent;
+						// e[i].ontouchend = virtualKeyboardChrome_prevent;
+
+						// Do not clear iterval during touchmove
+						e[i].ontouchmove = function (ent) {
+							virtualKeyboardChrome_prevent(ent);
+						};
+						// Clear interval on touchend – otherwise char repetition will continue forever
+						e[i].ontouchend = function (ent) {
+							clearInterval(virtualKeyboardChromeExtensionBackspaceTimer);
+							virtualKeyboardChrome_prevent(ent);
+						};
 					} else {
 						e[i].onmousedown = function (ent) {
 							var e = this.getAttribute("_key");

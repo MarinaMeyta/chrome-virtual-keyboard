@@ -30,7 +30,7 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
 	}
 	else if (request.method == "setLocalStorage") {
 		localStorage[request.key] = request.value;
-		sendResponse({ data: "ok" });
+		sendResponse({ data: "ok", setted_key: request.key });
 	}
 	else if (request.method == "openFromIframe") {
 		chrome.tabs.getSelected(null, function (tab) {
